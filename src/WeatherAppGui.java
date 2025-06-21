@@ -108,7 +108,38 @@ public class WeatherAppGui extends JFrame {
                 // update gui
 
                 // update weather image
-                String weatherCondition = (String)
+                String weatherCondition = (String) weatherData.get("weather_condition");
+
+                // update weather image depending on condition
+                switch (weatherCondition) {
+                    case "Clear":
+                        weatherConditionImage.setIcon(loadImage("src/assets/clear.png"));
+                        break;
+                    case "Cloudy":
+                        weatherConditionImage.setIcon(loadImage("src/assets/cloudy.png"));
+                        break;
+                    case "Rain":
+                        weatherConditionImage.setIcon(loadImage("src/assets/rainy.png"));
+                        break;
+                    case "Snow":
+                        weatherConditionImage.setIcon(loadImage("src/assets/snowy.png"));
+                        break;
+                }
+
+                // update temperature text
+                double temperature = (double) weatherData.get("temperature");
+                temperatureText.setText(temperature + "C");
+
+                // update weather condition text
+                weatherConditionDesc.setText(weatherCondition);
+
+                // update humidity text
+                long humidity = (long) weatherData.get("humidity");
+                humidityText.setText("<html><b>Humidity</b>" + humidity + "%</html>");
+
+                // update windpseed text
+                double windspeed = (double) weatherData.get("windspeed");
+                windSpeedText.setText("<html><b>Windspeed</b>" + windspeed + "km/h</html>");
 
             }
         });
