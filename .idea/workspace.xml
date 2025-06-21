@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2596a3d5-5306-4e8a-b737-5d91730c2a7c" name="Changes" comment="Implemented retrieval of temperature, weathercode, humidity and windspeed from open-meteo.com API">
+    <list default="true" id="2596a3d5-5306-4e8a-b737-5d91730c2a7c" name="Changes" comment="GUI elements are updated based on users location input, using data from open-meteo.com API">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WeatherAppGui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WeatherAppGui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/sunny.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/clear.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WeatherApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/WeatherApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,13 +113,22 @@
       <option name="project" value="LOCAL" />
       <updated>1750500629308</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="GUI elements are updated based on users location input, using data from open-meteo.com API">
+      <option name="closed" value="true" />
+      <created>1750501954882</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1750501954882</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Arranged a gui with various elements like size and position, showing temperature, humidity and wind speed" />
     <MESSAGE value="Implemented connection to open-meteo.com API" />
     <MESSAGE value="Implemented retrieval of temperature, weathercode, humidity and windspeed from open-meteo.com API" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented retrieval of temperature, weathercode, humidity and windspeed from open-meteo.com API" />
+    <MESSAGE value="GUI elements are updated based on users location input, using data from open-meteo.com API" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI elements are updated based on users location input, using data from open-meteo.com API" />
   </component>
 </project>

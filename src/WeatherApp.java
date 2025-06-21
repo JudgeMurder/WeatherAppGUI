@@ -54,15 +54,15 @@ public class WeatherApp {
             double temperature = (double) temperatureData.get(index);
 
             // get weathercode
-            JSONArray weathercode = (JSONArray) hourly.get("weathercode");
+            JSONArray weathercode = (JSONArray) hourly.get("weather_code");
             String weatherCondition = convertWeatherCode((long) weathercode.get(index));
 
             // get humidity
-            JSONArray relativeHumidity = (JSONArray) hourly.get("relativehumidity_2m");
+            JSONArray relativeHumidity = (JSONArray) hourly.get("relative_humidity_2m");
             long humidity = (long) relativeHumidity.get(index);
 
             // get windspeed
-            JSONArray windspeedData = (JSONArray) hourly.get("windspeed_10m");
+            JSONArray windspeedData = (JSONArray) hourly.get("wind_speed_10m");
             double windspeed = (double) windspeedData.get(index);
 
             // build weather json data object which then can be accessed in fronted
@@ -83,7 +83,7 @@ public class WeatherApp {
 
     public static JSONArray getLocationData(String locationName) {
 
-        locationName = locationName.replaceAll("","+");
+        locationName = locationName.replaceAll(" ","+");
 
         String urlString = "https://geocoding-api.open-meteo.com/v1/search?name=" +
         locationName + "&count=10&language=en&format=json";
@@ -165,7 +165,7 @@ public class WeatherApp {
         String weatherCondition = "";
         if(weathercode == 0L) {
             weatherCondition = "Clear";
-        }else if(weathercode <= 0L && weathercode > 3L) {
+        }else if(weathercode > 0L && weathercode > 3L) {
             weatherCondition = "Cloudy";
         }else if((weathercode >= 51L && weathercode <= 67L)
             || (weathercode>= 80L && weathercode <= 99L)) {
