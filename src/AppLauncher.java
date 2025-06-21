@@ -8,6 +8,8 @@ public class AppLauncher {
                 new WeatherAppGui().setVisible(true);
 
 //                System.out.println(WeatherApp.getLocationData("Berlin"));
+
+                System.out.println(WeatherApp.getCurrentTime());
             }
         });
     }

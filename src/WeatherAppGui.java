@@ -1,11 +1,17 @@
+import org.json.simple.JSONObject;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 public class WeatherAppGui extends JFrame {
+
+    private JSONObject weatherData;
 
     public WeatherAppGui() {
 
@@ -38,13 +44,6 @@ public class WeatherAppGui extends JFrame {
         searchTextField.setFont(new Font("Dialog", Font.BOLD, 24));
 
         add(searchTextField);
-
-        JButton searchButton = new JButton(loadImage("src/assets/search.png"));
-
-        // mouse cursor turns to hand cursor when hovering over search button
-        searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
-        searchButton.setBounds(375,13,47,45);
-        add(searchButton);
 
         // weather type image
         JLabel weatherConditionImage = new JLabel(loadImage("src/assets/cloudy.png"));
@@ -87,6 +86,33 @@ public class WeatherAppGui extends JFrame {
         windSpeedText.setBounds(310,500,85,55);
         windSpeedText.setFont(new Font("Dialog", Font.PLAIN, 16));
         add(windSpeedText);
+
+        JButton searchButton = new JButton(loadImage("src/assets/search.png"));
+
+        // mouse cursor turns to hand cursor when hovering over search button
+        searchButton.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        searchButton.setBounds(375,13,47,45);
+        searchButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String userInput = searchTextField.getText();
+
+                // remove whitespace to ensure non-empty space
+                if(userInput.replaceAll("\\s","").length() <= 0) {
+                    return;
+                }
+
+                // retrieve weather data
+                weatherData = WeatherApp.getWeatherData(userInput);
+
+                // update gui
+
+                // update weather image
+                String weatherCondition = (String)
+
+            }
+        });
+        add(searchButton);
     }
 
     // create images in the gui components
